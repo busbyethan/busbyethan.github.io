@@ -1,0 +1,413 @@
+[
+  {
+    "title": "The Sound of Persuasion: Using Generative AI to Identify Gender Gaps in Political Influence",
+    "authors": "Ethan C. Busby, Lisa P. Argyle, Parker Davis, Joshua R. Gubler, Bryce Hepner, Christopher F. Karpowitz, Alex Lyman, Justin Olcott, Jessica R. Preece, and David Wingate",
+    "year": null,
+    "yearLabel": "Forthcoming",
+    "publicationStatus": "forthcoming",
+    "venue": "Proceedings of the National Academy of Sciences (forthcoming)",
+    "kind": "article",
+    "kindLabel": "Journal article",
+    "topics": [
+      "ai",
+      "polarization"
+    ],
+    "methods": [
+      "randomized experiment",
+      "real-time voice conversations",
+      "generative AI",
+      "gender and persuasion"
+    ],
+    "summary": "Using real-time conversations with AI agents, this study separates voice-based gender cues from persuasive rhetoric and the topic of discussion. In this experiment, male- and female-sounding voices did not differ directly in persuasiveness; topic and participant gender were associated with differences in persuasion. The findings identify specific gender-related dynamics rather than establishing that gender bias is absent from political conversation.",
+    "status": "approved"
+  },
+  {
+    "title": "Unheard Voices: The Importance of Intersectionality in Responsiveness and the Systematic Ignoring of Black Men by Elected Officials",
+    "authors": "Ethan C. Busby, Andrew Ifedapo Thompson, Tomo Vierbuchen, and Suzy Yi",
+    "year": 2025,
+    "venue": "Political Behavior",
+    "kind": "article",
+    "kindLabel": "Journal article",
+    "topics": [
+      "listening",
+      "race"
+    ],
+    "methods": [
+      "field experiment",
+      "responsiveness"
+    ],
+    "summary": "A large-scale experiment with U.S. local elected officials finds that Black men were systematically ignored, regardless of the message they sent, highlighting the importance of intersectional theories of responsiveness.",
+    "status": "approved",
+    "doi": "https://doi.org/10.1007/s11109-025-10042-6"
+  },
+  {
+    "title": "Do They Even Care? Empirical Evidence for the Importance of Listening in Democracy",
+    "authors": "Ethan C. Busby, Andrew Ifedapo Thompson, and Suzy Yi",
+    "year": 2025,
+    "venue": "Political Communication 42 (4): 556–575",
+    "kind": "article",
+    "kindLabel": "Journal article",
+    "topics": [
+      "listening"
+    ],
+    "methods": [
+      "open-ended survey",
+      "conjoint experiment"
+    ],
+    "summary": "Citizens frequently define listening as fair consideration. A conjoint experiment shows that people respond positively when elected officials listen, even when other familiar predictors such as shared partisanship are held in view.",
+    "status": "approved",
+    "doi": "https://doi.org/10.1080/10584609.2025.2504509"
+  },
+  {
+    "title": "Testing Theories of Political Persuasion Using Artificial Intelligence",
+    "authors": "Lisa P. Argyle, Ethan C. Busby, Joshua R. Gubler, Alex Lyman, Justin Olcott, Jackson Pond, and David Wingate",
+    "year": 2025,
+    "venue": "Proceedings of the National Academy of Sciences 122 (18): e2412815122",
+    "kind": "article",
+    "kindLabel": "Journal article",
+    "topics": [
+      "ai",
+      "polarization"
+    ],
+    "methods": [
+      "preregistered survey experiments",
+      "large language models"
+    ],
+    "summary": "Two survey experiments use generative AI to test theories of persuasion. AI-generated counterattitudinal messages changed some attitudes, but customization and interaction were not consistently more persuasive than a generic message.",
+    "status": "approved",
+    "doi": "https://doi.org/10.1073/pnas.2412815122"
+  },
+  {
+    "title": "Balancing Large Language Model Alignment and Algorithmic Fidelity in Social Science Research",
+    "authors": "Alex Lyman, Bryce Hepner, Lisa P. Argyle, Ethan C. Busby, Joshua R. Gubler, and David Wingate",
+    "year": 2025,
+    "venue": "Sociological Methods & Research 54 (3): 1110–1155",
+    "kind": "article",
+    "kindLabel": "Journal article",
+    "topics": [
+      "ai",
+      "methods"
+    ],
+    "methods": [
+      "benchmarking",
+      "silicon sampling"
+    ],
+    "summary": "The study compares aligned and unaligned open-source language models with human responses. It shows that alignment affects simulated attitudes in predictable ways and that model choice matters for social-science research.",
+    "status": "approved",
+    "doi": "https://doi.org/10.1177/00491241251342008"
+  },
+  {
+    "title": "Introduction: Progress and Promise in Political Psychology",
+    "authors": "Ethan C. Busby, Christopher F. Karpowitz, and Cara J. Wong",
+    "year": 2025,
+    "venue": "Handbook of Innovations in Political Psychology, 1–9",
+    "kind": "book",
+    "kindLabel": "Book chapter",
+    "topics": [
+      "methods",
+      "polarization"
+    ],
+    "methods": [
+      "theory",
+      "research synthesis"
+    ],
+    "summary": "An introduction to a handbook on how political psychology can respond to democratic strain, technological change, and new questions about political behavior.",
+    "status": "approved"
+  },
+  {
+    "title": "Populism and Misinformation",
+    "authors": "Nina Wiesehomeier, Ethan C. Busby, and D. J. Flynn",
+    "year": 2024,
+    "venue": "The Ideational Approach to Populism, Volume II: Consequences and Mitigation",
+    "kind": "book",
+    "kindLabel": "Book chapter",
+    "topics": [
+      "populism",
+      "extremism"
+    ],
+    "methods": [
+      "theory",
+      "comparative research"
+    ],
+    "summary": "A chapter on how populism can create problems for democracy, including affective polarization, weakened institutions, and harmful policy responses.",
+    "status": "approved",
+    "doi": "https://doi.org/10.4324/9781003489993-20"
+  },
+  {
+    "title": "The Ideational Approach",
+    "authors": "Ethan C. Busby, Angelos Chryssogelos, Eliza Tanner Hawkins, Kirk A. Hawkins, Levente Littvay, and Nina Wiesehomeier",
+    "year": 2024,
+    "venue": "The Ideational Approach to Populism, Volume II",
+    "kind": "book",
+    "kindLabel": "Book chapter",
+    "topics": [
+      "populism",
+      "extremism"
+    ],
+    "methods": [
+      "theory",
+      "comparative research"
+    ],
+    "summary": "A chapter explaining the ideational approach to populism and its relevance for understanding contemporary threats to democratic institutions.",
+    "status": "approved",
+    "doi": "https://doi.org/10.4324/9781003489993-1"
+  },
+  {
+    "title": "The Political Psychology of Cancel Culture: Value Framing or Group Identity?",
+    "authors": "Elle Diether, Suzy Yi, Lisa P. Argyle, and Ethan C. Busby",
+    "year": 2024,
+    "venue": "Political Research Quarterly 77 (4): 1130–1145",
+    "kind": "article",
+    "kindLabel": "Journal article",
+    "topics": [
+      "polarization",
+      "race"
+    ],
+    "methods": [
+      "survey data",
+      "survey experiments"
+    ],
+    "summary": "Across survey data and experiments, partisanship strongly shapes how Americans understand and evaluate behaviors labeled cancel culture, while value framing has a weaker effect.",
+    "status": "approved",
+    "doi": "https://doi.org/10.1177/10659129241261374"
+  },
+  {
+    "title": "Changing Stereotypes of Partisans in the Trump Era",
+    "authors": "Ethan C. Busby, Adam J. Howat, and C. Daniel Myers",
+    "year": 2024,
+    "venue": "Political Science Research and Methods 12 (3): 606–613",
+    "kind": "article",
+    "kindLabel": "Journal article",
+    "topics": [
+      "polarization"
+    ],
+    "methods": [
+      "structural topic model",
+      "open-ended survey"
+    ],
+    "summary": "Comparing 2016 and 2021 responses, the study finds partisan stereotypes became less group- and issue-based and more focused on personal traits during the Trump era.",
+    "status": "approved",
+    "doi": "https://doi.org/10.1017/psrm.2023.30"
+  },
+  {
+    "title": "Defending the Dog Whistle: The Role of Justifications in Racial Messaging",
+    "authors": "Andrew Ifedapo Thompson and Ethan C. Busby",
+    "year": 2023,
+    "venue": "Political Behavior 45 (3): 1241–1262",
+    "kind": "article",
+    "kindLabel": "Journal article",
+    "topics": [
+      "race",
+      "extremism"
+    ],
+    "methods": [
+      "survey experiments",
+      "racial messaging"
+    ],
+    "summary": "Survey experiments examine how justifications can reduce the political costs of racialized messages while preserving support among racially resentful White respondents.",
+    "status": "approved",
+    "doi": "https://doi.org/10.1007/s11109-021-09759-x"
+  },
+  {
+    "title": "Leveraging AI for Democratic Discourse: Chat Interventions Can Improve Online Political Conversations at Scale",
+    "authors": "Lisa P. Argyle, Christopher A. Bail, Ethan C. Busby, Joshua R. Gubler, Thomas Howe, Christopher Rytting, Taylor Sorensen, and David Wingate",
+    "year": 2023,
+    "venue": "Proceedings of the National Academy of Sciences 120 (41): e2311627120",
+    "kind": "article",
+    "kindLabel": "Journal article",
+    "topics": [
+      "ai",
+      "listening",
+      "polarization"
+    ],
+    "methods": [
+      "large-scale experiment",
+      "AI intervention"
+    ],
+    "summary": "Evidence-based AI suggestions improved reported conversation quality, democratic reciprocity, and tone without systematically changing the content of conversations or policy attitudes.",
+    "status": "approved",
+    "doi": "https://doi.org/10.1073/pnas.2311627120"
+  },
+  {
+    "title": "Out of One, Many: Using Language Models to Simulate Human Samples",
+    "authors": "Lisa P. Argyle, Ethan C. Busby, Nancy Fulda, Joshua R. Gubler, Christopher Rytting, and David Wingate",
+    "year": 2023,
+    "venue": "Political Analysis 31 (3): 337–351",
+    "kind": "article",
+    "kindLabel": "Journal article",
+    "topics": [
+      "ai",
+      "methods"
+    ],
+    "methods": [
+      "silicon samples",
+      "large language models"
+    ],
+    "summary": "The study proposes that language models can simulate specific human subpopulations when conditioned on detailed demographic backstories, while emphasizing the need to evaluate algorithmic fidelity carefully.",
+    "status": "approved",
+    "url": "https://arxiv.org/abs/2209.06899"
+  },
+  {
+    "title": "Perceptions of Extremism among the American Public and Elected Officials",
+    "authors": "Ethan C. Busby",
+    "year": 2022,
+    "venue": "Electoral Studies 77: 102472",
+    "kind": "article",
+    "kindLabel": "Journal article",
+    "topics": [
+      "extremism",
+      "polarization"
+    ],
+    "methods": [
+      "surveys",
+      "conjoint experiments",
+      "open-ended responses"
+    ],
+    "summary": "Americans and elected officials use ideas about spatial extremity and unwillingness to listen when defining extremism, but they often apply those standards unevenly across political camps.",
+    "status": "approved"
+  },
+  {
+    "title": "Should You Stay Away from Strangers? Experiments on the Political Consequences of Intergroup Contact",
+    "authors": "Ethan C. Busby",
+    "year": 2021,
+    "venue": "Cambridge University Press",
+    "kind": "book",
+    "kindLabel": "Book",
+    "topics": [
+      "race",
+      "extremism"
+    ],
+    "methods": [
+      "experiments",
+      "intergroup contact"
+    ],
+    "summary": "A book-length study of how different forms of intergroup contact affect political attitudes, including when difficult communication produces backlash rather than harmony.",
+    "status": "approved",
+    "doi": "https://doi.org/10.1017/9781108957885"
+  },
+  {
+    "title": "The Partisan Next Door: Stereotypes of Party Supporters and Consequences for Polarization in America",
+    "authors": "Ethan C. Busby, Adam J. Howat, Jacob E. Rothschild, and Richard M. Shafranek",
+    "year": 2021,
+    "venue": "Cambridge University Press, Elements in American Politics",
+    "kind": "book",
+    "kindLabel": "Book",
+    "topics": [
+      "polarization"
+    ],
+    "methods": [
+      "open-ended survey",
+      "observational and experimental research"
+    ],
+    "summary": "The book shows that images of ordinary partisans—especially trait-based images—shape affective and ideological polarization, while instrumental views may create room for compromise.",
+    "status": "approved",
+    "url": "https://www.cambridge.org/core/books/partisan-next-door/"
+  },
+  {
+    "title": "Framing and Blame Attribution in Populist Rhetoric",
+    "authors": "Ethan C. Busby, Joshua R. Gubler, and Kirk A. Hawkins",
+    "year": 2019,
+    "venue": "The Journal of Politics 81 (2): 616–630",
+    "kind": "article",
+    "kindLabel": "Journal article",
+    "topics": [
+      "populism",
+      "extremism"
+    ],
+    "methods": [
+      "survey experiments",
+      "framing"
+    ],
+    "summary": "Dispositional blame frames activate latent populist attitudes more than situational frames, with downstream consequences for candidate support.",
+    "status": "approved",
+    "url": "https://www.journals.uchicago.edu/doi/10.1086/701493"
+  },
+  {
+    "title": "Pigeonholing Partisans: Stereotypes of Party Supporters and Partisan Polarization",
+    "authors": "Jacob E. Rothschild, Adam J. Howat, Richard M. Shafranek, and Ethan C. Busby",
+    "year": 2019,
+    "venue": "Political Behavior 41 (2): 423–443",
+    "kind": "article",
+    "kindLabel": "Journal article",
+    "topics": [
+      "polarization"
+    ],
+    "methods": [
+      "open-ended survey",
+      "structural topic model"
+    ],
+    "summary": "People describe partisans in terms of groups, issues, and traits. Trait-based stereotypes are especially associated with affective and ideological polarization.",
+    "status": "approved"
+  },
+  {
+    "title": "Activating Populist Attitudes: The Role of Corruption",
+    "authors": "Ethan C. Busby, David Doyle, Kirk A. Hawkins, and Nina Wiesehomeier",
+    "year": 2018,
+    "venue": "The Ideational Approach to Populism, 374–395",
+    "kind": "book",
+    "kindLabel": "Book chapter",
+    "topics": [
+      "populism",
+      "extremism"
+    ],
+    "methods": [
+      "laboratory experiments",
+      "comparative research"
+    ],
+    "summary": "The chapter examines how intentional misconduct and corruption can activate populist responses, especially when corruption is understood as widespread.",
+    "status": "approved"
+  },
+  {
+    "title": "Studying Framing Effects on Political Preferences: Existing Research and Lingering Questions",
+    "authors": "Ethan C. Busby, D. J. Flynn, James N. Druckman, and P. D’Angelo",
+    "year": 2018,
+    "venue": "Doing News Framing Analysis II, 27–50",
+    "kind": "book",
+    "kindLabel": "Book chapter",
+    "topics": [
+      "methods",
+      "populism"
+    ],
+    "methods": [
+      "research synthesis",
+      "framing"
+    ],
+    "summary": "A review of framing-effects research that identifies strengths, limitations, and open questions about how political messages shape preferences.",
+    "status": "approved"
+  },
+  {
+    "title": "Football and Public Opinion: A Partial Replication and Extension",
+    "authors": "Ethan C. Busby and James N. Druckman",
+    "year": 2018,
+    "venue": "Journal of Experimental Political Science 5 (1): 4–10",
+    "kind": "article",
+    "kindLabel": "Journal article",
+    "topics": [
+      "methods"
+    ],
+    "methods": [
+      "replication",
+      "experiment"
+    ],
+    "summary": "A partial replication suggests that irrelevant events can affect some political attitudes, but the effect is constrained to particular outcomes and may be short-lived.",
+    "status": "approved"
+  },
+  {
+    "title": "The Political Relevance of Irrelevant Events",
+    "authors": "Ethan C. Busby, James N. Druckman, and Alexandria Fredendall",
+    "year": 2017,
+    "venue": "The Journal of Politics 79 (1): 346–350",
+    "kind": "article",
+    "kindLabel": "Journal article",
+    "topics": [
+      "methods"
+    ],
+    "methods": [
+      "experiment",
+      "replication"
+    ],
+    "summary": "An experiment finds that a sporting event can affect presidential approval, likely through mood, while emphasizing the importance of identifying when irrelevant-event effects occur.",
+    "status": "approved",
+    "url": "https://www.journals.uchicago.edu/doi/10.1086/687570"
+  }
+]

@@ -1,0 +1,12 @@
+// To add artwork through Codex: save an image in assets/parodies/ and add one entry.
+// Images are generated in advance; the public gallery makes no generation API calls.
+export const paintings = [
+  {file:'delaware-v2.png',title:'Crossing the Delaware. Missing office hours.',caption:'An AI-generated parody inspired by Emanuel Leutze’s Washington Crossing the Delaware.',alt:'AI-generated oil-painting parody: Ethan Busby rowing with Washington’s crew, his face rendered in the same Romantic painting style.'},
+  {file:'haystacks-v2.png',title:'Outstanding in my field. Mostly hay.',caption:'An AI-generated parody inspired by Claude Monet’s haystack paintings.',alt:'AI-generated Impressionist parody: Ethan Busby beside sunlit haystacks, including a face painted with broken strokes of color.'},
+  {file:'gothic-v2.png',title:'American Gothic. Academic edition.',caption:'An AI-generated parody inspired by Grant Wood’s American Gothic.',alt:'AI-generated American Regionalist parody: a painted Ethan Busby holds a pitchfork beside a woman and farmhouse.'},
+  {file:'starry-night.png',title:'The Starry Night Before a Deadline.',caption:'An AI-generated parody inspired by Vincent van Gogh’s The Starry Night.',alt:'AI-generated Post-Impressionist parody: Ethan Busby painted in expressive impasto beneath a swirling blue and gold night sky.'},
+  {file:'great-wave.png',title:'The Great Wave of Reviewer Comments.',caption:'An AI-generated parody inspired by Hokusai’s The Great Wave.',alt:'AI-generated woodblock-print parody: a stylized Ethan Busby rides in a boat beneath an enormous curling blue wave.'},
+  {file:'vermeer.png',title:'Professor with a Pearl Earring.',caption:'An AI-generated parody inspired by Johannes Vermeer’s Girl with a Pearl Earring.',alt:'AI-generated Dutch portrait parody: Ethan Busby with glasses, a head wrap, and a pearl earring, rendered in soft oil-painted light.'},
+  {file:'seurat.png',title:'A Sunday Afternoon of Unanswered Emails.',caption:'An AI-generated parody inspired by Georges Seurat’s A Sunday Afternoon on the Island of La Grande Jatte.',alt:'AI-generated pointillist parody: Ethan Busby at a riverside picnic, his face and surroundings formed from small dots of pigment.'},
+  {file:'magritte.png',title:'The Son of Man with a Revise and Resubmit.',caption:'An AI-generated parody inspired by René Magritte’s The Son of Man.',alt:'AI-generated Surrealist parody: Ethan Busby beside a seaside wall, with a floating apple and bowler hat.'}
+];
