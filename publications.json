@@ -22,6 +22,27 @@
     "status": "approved"
   },
   {
+    "title": "Looking Under the Hood: How LLMs Attempt Political Persuasion and Microtargeting",
+    "authors": "Alex Lyman, Ethan C. Busby, Lisa P. Argyle, Joshua R. Gubler, Bryce Hepner, and David Wingate",
+    "year": 2026,
+    "venue": "Chinese Political Science Review",
+    "kind": "article",
+    "kindLabel": "Journal article",
+    "topics": [
+      "ai",
+      "polarization",
+      "methods"
+    ],
+    "methods": [
+      "LLM message analysis",
+      "human persuasion study"
+    ],
+    "summary": "Examining how language models construct generic and customized political messages, this study finds that models differ in following customization instructions. Their adjustments rarely align systematically with recipients’ backgrounds and do not improve persuasion overall in the human study.",
+    "status": "approved",
+    "doi": "https://doi.org/10.1007/s41111-026-00336-3",
+    "url": "https://link.springer.com/article/10.1007/s41111-026-00336-3"
+  },
+  {
     "title": "Unheard Voices: The Importance of Intersectionality in Responsiveness and the Systematic Ignoring of Black Men by Elected Officials",
     "authors": "Ethan C. Busby, Andrew Ifedapo Thompson, Tomo Vierbuchen, and Suzy Yi",
     "year": 2025,
