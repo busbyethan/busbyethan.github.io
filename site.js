@@ -59,17 +59,52 @@ filters?.addEventListener('input', filterPapers);
 filters?.addEventListener('change', filterPapers);
 filters?.addEventListener('reset', () => setTimeout(filterPapers, 0));
 
+// Render only paragraphs, lists, bold, and emphasis using DOM text nodes. Model text
+// is never HTML, and generated Markdown links are not converted to live links.
+function inlineText(container,text) {
+  let end=0;
+  for(const match of text.matchAll(/\*\*([^*\n]+)\*\*|\*([^*\n]+)\*/g)) {
+    container.append(document.createTextNode(text.slice(end,match.index)));
+    const formatted=document.createElement(match[1]?'strong':'em');formatted.textContent=match[1]||match[2];container.append(formatted);
+    end=match.index+match[0].length;
+  }
+  container.append(document.createTextNode(text.slice(end)));
+}
+function answerBody(container,text) {
+  let paragraph=[],list=null;
+  function flush(){if(paragraph.length){const p=document.createElement('p');inlineText(p,paragraph.join('\n'));container.append(p);paragraph=[];}}
+  for(const line of text.split('\n')) {
+    if(!line.trim()){flush();list=null;continue;}
+    const item=line.match(/^\s*([-*•]|\d+\.)\s+(.+)$/);
+    if(item){flush();const tag=/\d/.test(item[1])?'OL':'UL';
+      if(!list||list.tagName!==tag){list=document.createElement(tag.toLowerCase());container.append(list);}
+      const li=document.createElement('li');inlineText(li,item[2]);list.append(li);
+    }else{list=null;paragraph.push(line.replace(/^#{1,6}\s+/,''));}
+  }
+  flush();
+}
+function citationLabel(citation) {
+  // This filename was confirmed in the owner's live test of the uploaded PDF.
+  const name=String(citation.title||'').replace(/^Uploaded document:\s*/i,'').toLowerCase().replace(/[^a-z0-9]/g,'');
+  if(name==='argyleetal2025testingtheoriespdf')return {
+    title:'Testing Theories of Political Persuasion Using Artificial Intelligence',
+    url:'https://doi.org/10.1073/pnas.2412815122'
+  };
+  return citation;
+}
 // Render external text safely, including AI output and visitor questions.
 function addMessage(text, role = 'assistant', citations = []) {
   const message = document.createElement('div');
   message.className = `message ${role}`;
-  const body = document.createElement('p');
-  body.textContent = text;
-  message.append(body);
-  citations.forEach(citation => {
+  if(role==='assistant')answerBody(message,text);
+  else{const body=document.createElement('p');body.textContent=text;message.append(body);}
+  const seen=new Set();
+  (Array.isArray(citations)?citations:[]).forEach(rawCitation => {
     try {
+      const citation=citationLabel(rawCitation);
       const url = new URL(citation.url);
-      if (!['https:','http:'].includes(url.protocol)) return;
+      if (!['https:','http:'].includes(url.protocol)||seen.has(url.href)) return;
+      seen.add(url.href);
       const link = document.createElement('a');
       link.className = 'citation';
       link.href = url.href;
@@ -101,38 +136,78 @@ async function localFinder(question) {
   return {answer:`Here are papers matching your question. These are saved bibliography summaries, not an AI-generated answer.\n\n${ranked.map(({paper:p})=>`${p.title} (${p.yearLabel || p.year})\n${p.summary}`).join('\n\n')}`,citations:ranked.map(({paper:p})=>({title:p.title,url:p.doi||p.url||`${location.origin}/publications/#${p.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}`}))};
 }
 let pending = false;
+let chatHistory=[];
+const liveGuide=!!window.RESEARCH_CONCIERGE_ENDPOINT;
+const initialPrompts=[
+  {label:'Simulated samples',question:'AI simulated human samples'},
+  {label:'Persuasion',question:'political persuasion'},
+  {label:'Democratic skills',question:'What democratic skills is SAIL studying?'}
+];
+function setPrompts(prompts) {
+  const container=$('.prompts');if(!container)return;
+  container.replaceChildren();
+  prompts.slice(0,3).forEach(item=>{
+    const label=typeof item==='string'?item:item.label;
+    const question=typeof item==='string'?item:item.question;
+    if(typeof question!=='string'||!question.trim()||question.length>1200)return;
+    const button=document.createElement('button');button.type='button';button.dataset.prompt=question;button.textContent=label;container.append(button);
+  });
+}
+function introduction() {
+  return liveGuide?'Ask about the research, then follow up. I’ll use the approved source collection and link to the material behind my answers.':'This local preview finds papers in the reviewed bibliography. Try AI and human samples, persuasion, or listening. The AI guide is configured for ethanbusby.com.';
+}
+if($('#chat-form')) {
+  $('#chat-mode').textContent=liveGuide?'AI research guide':'Local paper finder';
+  $('#chat-messages').replaceChildren();addMessage(introduction());setPrompts(initialPrompts);
+  if(!liveGuide)$('#chat-note').textContent='Local preview: questions are matched to saved publication summaries in your browser. On ethanbusby.com, the guide uses the connected AI service and approved research collection.';
+}
 async function ask(question) {
   if (pending || !question.trim()) return;
   pending = true;
   addMessage(question.trim(),'user');
-  $('#chat-status').textContent = 'Finding relevant papers…';
-  const buttons = $$('#chat-form button, .prompts button');
+  $('#chat-status').textContent = liveGuide?'Searching the approved research collection…':'Finding relevant papers…';
+  $('.chat').setAttribute('aria-busy','true');
+  const buttons = $$('#chat-form button, .prompts button, #chat-reset');
   buttons.forEach(button => button.disabled = true);
+  $('#chat-input').disabled=true;
   try {
     let result;
     // Live AI is opt-in. Otherwise the UI explicitly labels this as a local paper finder.
-    if (window.RESEARCH_CONCIERGE_ENDPOINT) {
+    const outgoing=[...chatHistory.slice(-8),{role:'user',content:question.trim()}];
+    if (liveGuide) {
       const response = await fetch(window.RESEARCH_CONCIERGE_ENDPOINT, {
         method:'POST', headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({messages:[{role:'user',content:question.trim()}]}),
-        signal:AbortSignal.timeout(30000)
+        body:JSON.stringify({messages:outgoing}),
+        signal:AbortSignal.timeout(65000)
       });
-      if (!response.ok) throw new Error('Research guide unavailable');
-      result = await response.json();
-      $('#chat-mode').textContent = 'AI research guide';
+      result = await response.json().catch(()=>{throw new Error('The research guide returned an unreadable response. Please try again or browse Publications.');});
+      if (!response.ok) throw new Error(typeof result.error==='string'?result.error:'The research guide is unavailable. Please try again or browse Publications.');
     } else result = await localFinder(question);
-    addMessage(result.answer || result.output_text || 'No answer was returned.','assistant',result.citations || []);
+    if(typeof result.answer!=='string'||!result.answer.trim())throw new Error('No answer was returned. Please try again or browse Publications.');
+    addMessage(result.answer,'assistant',result.citations || []);
+    chatHistory=[...outgoing,{role:'assistant',content:result.answer.slice(0,3500)}].slice(-8);
+    if(liveGuide&&Array.isArray(result.suggested_questions))setPrompts(result.suggested_questions);
     $('#chat-status').textContent = '';
-  } catch {
-    $('#chat-status').textContent = 'The research guide is unavailable. Please try again or browse Publications.';
-  } finally { pending = false; buttons.forEach(button => button.disabled = false); }
+  } catch(error) {
+    $('#chat-status').textContent = error.name==='TimeoutError'?'The research guide took too long to respond. Please try again or browse Publications.':error.message;
+    $('#chat-input').value=question;
+  } finally {
+    pending = false;buttons.forEach(button => button.disabled = false);
+    $('#chat-input').disabled=false;$('.chat').setAttribute('aria-busy','false');
+  }
 }
 $('#chat-form')?.addEventListener('submit', event => {
   event.preventDefault();
   const input = $('#chat-input');
   if (!pending && input.value.trim()) { const question = input.value; input.value = ''; ask(question); }
 });
-$$('[data-prompt]').forEach(button => button.addEventListener('click', () => ask(button.dataset.prompt)));
+$('.prompts')?.addEventListener('click',event=>{
+  const button=event.target.closest('button[data-prompt]');if(button&&!pending)ask(button.dataset.prompt);
+});
+$('#chat-reset')?.addEventListener('click',()=>{
+  if(pending)return;chatHistory=[];$('#chat-messages').replaceChildren();addMessage(introduction());
+  setPrompts(initialPrompts);$('#chat-input').value='';$('#chat-status').textContent='New conversation started.';$('#chat-input').focus();
+});
 
 // A finite collection of generated parodies, shuffled locally. No visitor-side API calls.
 const galleryImage = $('#parody-image');

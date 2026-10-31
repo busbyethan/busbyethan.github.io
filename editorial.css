@@ -15,6 +15,20 @@ main{min-height:60vh;animation:arrive .5s ease both}h1,h2,h3,p{margin-top:0}h1,h
 @media(max-width:680px){.wrap{width:calc(100% - 40px)}.site-header{display:block;padding:24px 0;min-height:0}.wordmark{font-size:23px}nav{margin-top:24px;justify-content:space-between;gap:8px}nav a{font-size:12px}.home-intro{display:flex;flex-direction:column;padding:44px 0;gap:32px;align-items:stretch}h1{font-size:46px}.eyebrow{font-size:10px}.intro-lead{font-size:19px}.portrait{align-self:stretch;display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:end}.portrait img{width:110px;height:140px}.portrait figcaption{padding-bottom:8px}.home-bottom>div{flex-wrap:wrap;gap:14px}.site-footer{flex-direction:column;margin-top:45px}.footer-right{gap:16px}.page-heading{padding:44px 0 20px}.page-heading p:last-child{font-size:16px}.research-layout{grid-template-columns:1fr}.research-tabs{border-right:0;border-bottom:1px solid var(--line);padding:14px 0;display:grid;grid-template-columns:1fr 1fr}.research-tabs button{font-size:12px;padding:12px 8px;gap:8px}.research-tabs button b{display:none}.research-panels{padding:25px 0}.research-panels h2{font-size:29px}.about-layout{display:flex;flex-direction:column}.about-photo{width:160px;height:210px}.lab-note{display:block}.filters{gap:12px}.filters label:not(.search-label){flex:1}.filters select{width:100%;max-width:100%;font-size:12px;padding:10px 5px}.paper{grid-template-columns:42px 1fr;gap:10px;padding:24px 0}.paper h2{font-size:23px}.chat-head,.messages{padding:18px}.chat form{padding:14px;gap:6px}.chat form button{padding:9px 12px}.prompts{padding-inline:18px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
+/* Research guide: plain DOM formatting and in-page conversation controls. */
+.chat-head>span{flex:1;min-width:0}
+#chat-reset{color:var(--muted);background:none;border:1px solid var(--line);padding:6px 9px;font-size:11px;white-space:nowrap}
+#chat-reset:hover{color:var(--text);border-color:var(--accent)}
+.messages{height:410px;overscroll-behavior:contain}
+.message{max-width:100%;overflow-wrap:anywhere}
+.message ul,.message ol{margin:8px 0 16px;padding-left:22px}
+.message li{margin:7px 0;line-height:1.65}
+.message strong{font-weight:650}
+.message.user{max-width:94%}
+.citation{line-height:1.55;overflow-wrap:anywhere}
+.prompts button{text-align:left;line-height:1.5}
+.chat[aria-busy=true] #chat-status::before{content:'• ';color:var(--accent)}
+@media(max-width:680px){.messages{height:410px}.chat-head{gap:10px}#chat-reset{font-size:10px;padding:6px}.chat-head>span{font-size:12px}}
 /* Small portrait stays aligned to the name, rather than the two-line wordmark. */
 .wordmark{display:inline-flex;gap:8px;align-items:flex-start}
 .header-avatar{display:block;width:28px;height:28px;object-fit:contain;flex-shrink:0;margin-top:1px}
